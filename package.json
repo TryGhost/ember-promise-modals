@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@ember/test-waiters": "^3.0.0",
+    "@embroider/util": "^0.44.1",
     "broccoli-funnel": "^3.0.8",
     "broccoli-merge-trees": "^4.2.0",
     "broccoli-postcss": "^5.1.0",
