@@ -11,6 +11,7 @@ export default Service.extend({
   }),
   top: alias('_stack.lastObject'),
 
+  allowOutsideClick: undefined,
   clickOutsideDeactivates: true,
 
   init() {
