@@ -30,11 +30,12 @@ export default Component.extend({
   didInsertElement() {
     this._super(...arguments);
 
-    let { allowOutsideClick, clickOutsideDeactivates } = this.modals;
+    let { allowOutsideClick, clickOutsideDeactivates, escapeDeactivates } = this.modals;
     let element = document.getElementById(this.modalElementId);
     let options = {
       allowOutsideClick,
       clickOutsideDeactivates,
+      escapeDeactivates,
       fallbackFocus: `#${this.modalElementId}`,
       onDeactivate: () => {
         if (this.isDestroyed || this.isDestroying) {
