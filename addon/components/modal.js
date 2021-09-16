@@ -85,7 +85,14 @@ export default Component.extend({
     this._super(...arguments);
   },
 
-  closeModal(result) {
+  async closeModal(result) {
+    if (this.modal._options.beforeClose) {
+      let allowClose = await this.modal._options.beforeClose(result);
+      if (allowClose === false) {
+        return;
+      }
+    }
+
     // Trigger out animation
     set(this, 'animatingOutClass', this.outAnimationClass);
 

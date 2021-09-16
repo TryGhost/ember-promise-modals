@@ -5,3 +5,4 @@ Custom changes:
 - added `allowOutsideClick` passthrough from the `modals` service to the `focus-trap` initialisation so `clickOutsideDeactivates` and `allowOutsideClick` and be used in tandem to allow wormholed content such as dropdowns to work inside of a modal
 - added `escapeDeactivates` passthrough from the `modals` service to the `focus-trap` initialisation so that deactivation/close event handling can be fully controlled by the consuming app
 - added `.finally()` to modal instances so the Promise-like interface is more complete. Useful for cleanup after a modal is resolved/rejected without duplication
+- added `beforeClose()` as an option that can be passed when opening a modal, if the function returns `false` then the modal close will be aborted
