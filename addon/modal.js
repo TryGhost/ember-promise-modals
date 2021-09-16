@@ -35,6 +35,10 @@ export default class Modal {
     return this._deferred.promise.then(onFulfilled, onRejected);
   }
 
+  finally(callback) {
+    return this._deferred.promise.finally(callback);
+  }
+
   _resolve(result) {
     if (!this._deferredOutAnimation) {
       set(this, '_deferredOutAnimation', defer());
