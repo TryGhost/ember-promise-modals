@@ -4382,23 +4382,31 @@ return r.name||(r.name=e.slice(e.lastIndexOf("/")+1)),r}function r(e,t){return-1
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var i=t.default.extend({layout:r.default,tagName:"",modals:(0,n.inject)()})
 e.default=i})),define("ember-promise-modals/components/modal",["exports","@ember/component","@ember/object","@ember/object/computed","@ember/object/internals","@ember/service","focus-trap","ember-promise-modals/templates/components/modal"],(function(e,t,n,r,i,o,a,s){"use strict"
-function u(e,t){var n=Object.keys(e)
+function u(e,t,n,r,i,o,a){try{var s=e[o](a),u=s.value}catch(l){return void n(l)}s.done?t(u):Promise.resolve(u).then(r,i)}function l(e,t){var n=Object.keys(e)
 if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e)
-t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function l(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{}
-t%2?u(Object(n),!0).forEach((function(t){c(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):u(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function c(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var f=t.default.extend({layout:s.default,tagName:"",outAnimationClass:"epm-out",modals:(0,o.inject)(),optionsClassName:(0,r.readOnly)("modal._options.className"),modalElementId:null,focusTrapOptions:null,init:function(){this._super.apply(this,arguments),(0,n.set)(this,"modalElementId",(0,i.guidFor)(this)),this.modal._componentInstance=this
+t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function c(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{}
+t%2?l(Object(n),!0).forEach((function(t){f(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):l(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function f(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
+var d=t.default.extend({layout:s.default,tagName:"",outAnimationClass:"epm-out",modals:(0,o.inject)(),optionsClassName:(0,r.readOnly)("modal._options.className"),modalElementId:null,focusTrapOptions:null,init:function(){this._super.apply(this,arguments),(0,n.set)(this,"modalElementId",(0,i.guidFor)(this)),this.modal._componentInstance=this
 var e=this.modals.focusTrapOptions,t=this.modal._options.focusTrapOptions
 null!==t&&(this.focusTrapOptions=t||e)},didInsertElement:function(){var e=this
 this._super.apply(this,arguments)
 var t=document.getElementById(this.modalElementId)
-if(this.focusTrapOptions){var r=l(l({},this.focusTrapOptions),{},{fallbackFocus:"#".concat(this.modalElementId),onDeactivate:function(){var t,n
+if(this.focusTrapOptions){var r=c(c({},this.focusTrapOptions),{},{fallbackFocus:"#".concat(this.modalElementId),onDeactivate:function(){var t,n
 null===(t=(n=e.focusTrapOptions).onDeactivate)||void 0===t||t.call(n),e.isDestroyed||e.isDestroying||e.closeModal()}})
 this.focusTrap=(0,a.createFocusTrap)(t,r),this.focusTrap.activate()}this.fadeOutEnd=function(n){var r=n.target,i=n.animationName
 e.modals._onModalAnimationEnd()
 var o=r!==t,a="-out"!==i.substring(i.length-4)
 o||a||e.modal._remove()},this.modals._onModalAnimationStart(),t.addEventListener("animationend",this.fadeOutEnd),(0,n.set)(this,"animatingOutClass","")},willDestroyElement:function(){if(this.focusTrap&&this.focusTrap.deactivate({onDeactivate:null}),this.fadeOutEnd){var e=document.getElementById(this.modalElementId)
-e&&(e.removeEventListener("animationend",this.fadeOutEnd),this.modal._remove())}this._super.apply(this,arguments)},closeModal:function(e){(0,n.set)(this,"animatingOutClass",this.outAnimationClass),this.focusTrap&&this.focusTrap.deactivate({onDeactivate:this.focusTrapOptions.onDeactivate}),this.modal._resolve(e)},actions:{close:function(e){this.closeModal(e)}}})
-e.default=f})),define("ember-promise-modals/modal",["exports","@ember/object","@ember/test-waiters","rsvp"],(function(e,t,n,r){"use strict"
+e&&(e.removeEventListener("animationend",this.fadeOutEnd),this.modal._remove())}this._super.apply(this,arguments)},closeModal:function(e){var t,r=this
+return(t=regeneratorRuntime.mark((function t(){return regeneratorRuntime.wrap((function(t){for(;;)switch(t.prev=t.next){case 0:if(!r.modal._options.beforeClose){t.next=6
+break}return t.next=3,r.modal._options.beforeClose(e)
+case 3:if(!1!==t.sent){t.next=6
+break}return t.abrupt("return")
+case 6:(0,n.set)(r,"animatingOutClass",r.outAnimationClass),r.focusTrap&&r.focusTrap.deactivate({onDeactivate:r.focusTrapOptions.onDeactivate}),r.modal._resolve(e)
+case 9:case"end":return t.stop()}}),t)})),function(){var e=this,n=arguments
+return new Promise((function(r,i){var o=t.apply(e,n)
+function a(e){u(o,r,i,a,s,"next",e)}function s(e){u(o,r,i,a,s,"throw",e)}a(void 0)}))})()},actions:{close:function(e){this.closeModal(e)}}})
+e.default=d})),define("ember-promise-modals/modal",["exports","@ember/object","@ember/test-waiters","rsvp"],(function(e,t,n,r){"use strict"
 var i,o
 function a(e,t){var n=Object.keys(e)
 if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e)
@@ -4407,7 +4415,7 @@ t%2?a(Object(n),!0).forEach((function(t){u(e,t,n[t])})):Object.getOwnPropertyDes
 r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var f,d,p,h,m,v,g=(i=(0,t.computed)("_deferredOutAnimation"),f=(o=function(){function e(t,n,i){var o=arguments.length>3&&void 0!==arguments[3]?arguments[3]:{}
 l(this,e),this._service=t,this._name=n,this._data=i,this._options=s({className:"",onAnimationModalOutEnd:void 0},o),this._result=void 0,this._deferred=(0,r.defer)(),this._deferredOutAnimation=void 0,this._componentInstance=void 0}var i,o,a
-return i=e,(o=[{key:"result",get:function(){return this._result}},{key:"isClosing",get:function(){return Boolean(this._deferredOutAnimation)}},{key:"close",value:function(e){this._componentInstance&&this._componentInstance.closeModal(e)}},{key:"then",value:function(e,t){return this._deferred.promise.then(e,t)}},{key:"_resolve",value:function(e){var i=this
+return i=e,(o=[{key:"result",get:function(){return this._result}},{key:"isClosing",get:function(){return Boolean(this._deferredOutAnimation)}},{key:"close",value:function(e){this._componentInstance&&this._componentInstance.closeModal(e)}},{key:"then",value:function(e,t){return this._deferred.promise.then(e,t)}},{key:"finally",value:function(e){return this._deferred.promise.finally(e)}},{key:"_resolve",value:function(e){var i=this
 this._deferredOutAnimation||((0,t.set)(this,"_deferredOutAnimation",(0,r.defer)()),this._options.onAnimationModalOutEnd&&this._deferredOutAnimation.promise.then((function(){return i._options.onAnimationModalOutEnd()})).catch((function(){})),this._result=e,this._deferred.resolve(e),(0,n.waitForPromise)(this._deferredOutAnimation.promise))}},{key:"_remove",value:function(){this._service._stack.removeObject(this),0===this._service._stack.length&&this._service._onLastModalRemoved(),this._componentInstance=void 0,this._deferredOutAnimation&&this._deferredOutAnimation.resolve()}}])&&c(i.prototype,o),a&&c(i,a),Object.defineProperty(i,"prototype",{writable:!1}),e}()).prototype,d="isClosing",p=[i],h=Object.getOwnPropertyDescriptor(o.prototype,"isClosing"),m=o.prototype,v={},Object.keys(h).forEach((function(e){v[e]=h[e]})),v.enumerable=!!v.enumerable,v.configurable=!!v.configurable,("value"in v||v.initializer)&&(v.writable=!0),v=p.slice().reverse().reduce((function(e,t){return t(f,d,e)||e}),v),m&&void 0!==v.initializer&&(v.value=v.initializer?v.initializer.call(m):void 0,v.initializer=void 0),void 0===v.initializer&&(Object.defineProperty(f,d,v),v=null),o)
 e.default=g})),define("ember-promise-modals/services/modals",["exports","@ember/array","@ember/debug","@ember/object","@ember/object/computed","@ember/service","ember-promise-modals/modal"],(function(e,t,n,r,i,o,a){"use strict"
 function s(e,t){var n=Object.keys(e)
