@@ -108,7 +108,7 @@ export default Component.extend({
 
     if (this.focusTrap) {
       this.focusTrap.deactivate({
-        onDeactivate: this.focusTrapOptions.onDeactivate,
+        onDeactivate: null,
       });
     }
 
