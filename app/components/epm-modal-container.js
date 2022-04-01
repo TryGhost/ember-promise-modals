@@ -1,1 +1,1 @@
-export { default } from 'ember-promise-modals/components/modal-container';
+export { default } from '@tryghost/ember-promise-modals/components/modal-container';

@@ -5,10 +5,9 @@ import { module, test } from 'qunit';
 
 import Component from '@ember/component';
 
+import ModalsService from '@tryghost/ember-promise-modals/services/modals';
+import { setupPromiseModals } from '@tryghost/ember-promise-modals/test-support';
 import hbs from 'htmlbars-inline-precompile';
-
-import ModalsService from 'ember-promise-modals/services/modals';
-import { setupPromiseModals } from 'ember-promise-modals/test-support';
 
 module('Configuration | focus trap', function (hooks) {
   setupRenderingTest(hooks);

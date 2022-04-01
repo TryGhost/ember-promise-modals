@@ -2,8 +2,8 @@ import { visit, click, triggerKeyEvent, waitUntil } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-import ModalsService from 'ember-promise-modals/services/modals';
-import { setupPromiseModals } from 'ember-promise-modals/test-support';
+import ModalsService from '@tryghost/ember-promise-modals/services/modals';
+import { setupPromiseModals } from '@tryghost/ember-promise-modals/test-support';
 
 module('Application | basics', function (hooks) {
   setupApplicationTest(hooks);

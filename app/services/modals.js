@@ -1,1 +1,1 @@
-export { default } from 'ember-promise-modals/services/modals';
+export { default } from '@tryghost/ember-promise-modals/services/modals';
