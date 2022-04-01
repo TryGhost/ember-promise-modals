@@ -4402,7 +4402,7 @@ return(t=regeneratorRuntime.mark((function t(){return regeneratorRuntime.wrap((f
 break}return t.next=3,r.modal._options.beforeClose(e)
 case 3:if(!1!==t.sent){t.next=6
 break}return t.abrupt("return")
-case 6:(0,n.set)(r,"animatingOutClass",r.outAnimationClass),r.focusTrap&&r.focusTrap.deactivate({onDeactivate:r.focusTrapOptions.onDeactivate}),r.modal._resolve(e)
+case 6:(0,n.set)(r,"animatingOutClass",r.outAnimationClass),r.focusTrap&&r.focusTrap.deactivate({onDeactivate:null}),r.modal._resolve(e)
 case 9:case"end":return t.stop()}}),t)})),function(){var e=this,n=arguments
 return new Promise((function(r,i){var o=t.apply(e,n)
 function a(e){u(o,r,i,a,s,"next",e)}function s(e){u(o,r,i,a,s,"throw",e)}a(void 0)}))})()},actions:{close:function(e){this.closeModal(e)}}})
