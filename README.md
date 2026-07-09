@@ -1,5 +1,7 @@
 Forked from https://github.com/simplabs/ember-promise-modals with specific changes for https://github.com/TryGhost/Admin.
 
+This fork is end-of-life, and will not be updated or maintained. Once it has been removed from Ghost, the npmjs package will be deprecated.
+
 Not recommended for general use, this package will be removed if upstream becomes compatible with our requirements.
 
 Custom changes:
